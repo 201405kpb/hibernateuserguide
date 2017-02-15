@@ -23,7 +23,13 @@ whose naming standards are to:
 
 Example 2. Example PhysicalNamingStrategy implementation
 ```java
-    
+ /*
+ * Hibernate, Relational Persistence for Idiomatic Java
+ *
+ * License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+ * See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+ */
+
     
 ```
 There are multiple ways to specify the PhysicalNamingStrategy to use. First, applications can specify
