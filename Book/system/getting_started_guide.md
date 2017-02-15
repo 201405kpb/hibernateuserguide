@@ -1,10 +1,12 @@
 ### Getting Started Guide
 
-
 New users may want to first look through the [Hibernate Getting Started Guide](https://docs.jboss.org/hibernate/orm/5.2/quickstart/html_single/) for basic information as well as tutorials.
+
+新用户用户可能希望首先通过[Hibernate入门指南](https://docs.jboss.org/hibernate/orm/5.2/quickstart/html_single/)了解基本信息以及教程。
+
 There is also a series of [topical guides](http://docs.jboss.org/hibernate/orm/5.2/topical/html_single/) providing deep dives into various topics.
 
-
+>![](/Book/images/org/hibernate/docbook/note.png)
 >While having a strong background in SQL is not required to use Hibernate, it certainly helps a lot because it all boils down to SQL statements.
 Probably even more important is an understanding of data modeling principles.
 You might want to consider these resources as a good starting point:
