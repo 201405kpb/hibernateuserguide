@@ -38,6 +38,7 @@ public class Product {
     private String description;
 }
 ```
+
 The JPA specification strictly limits the Java types that can be marked as basic to the following listing:
 
 
