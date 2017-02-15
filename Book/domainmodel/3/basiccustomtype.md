@@ -9,17 +9,15 @@ There are two approaches to developing a custom type:
 *   implementing a `BasicType` and registering it
 *   implement a `UserType` which doesn&#8217;t require type registration
  
-    As a means of illustrating the different approaches, let&#8217;s consider a use case where we need to support a `java.util.BitSet` mapping that&#8217;s stored as a VARCHAR.
+ As a means of illustrating the different approaches, let&#8217;s consider a use case where we need to support a `java.util.BitSet` mapping that&#8217;s stored as a VARCHAR.
 
 
 ## Implementing a `BasicType`
 
-    The first approach is to directly implement the `BasicType` interface.
+The first approach is to directly implement the `BasicType` interface.
+Because the `BasicType` interface has a lot of methods to implement, it&#8217;s much more convenient to extend the `AbstractStandardBasicType`,or the `AbstractSingleColumnStandardBasicType` if the value is stored in a single database column.
 
-    Because the `BasicType` interface has a lot of methods to implement, it&#8217;s much more convenient to extend the `AbstractStandardBasicType`,
-    or the `AbstractSingleColumnStandardBasicType` if the value is stored in a single database column.
-
-    First, we need to extend the `AbstractSingleColumnStandardBasicType` like this:
+First, we need to extend the `AbstractSingleColumnStandardBasicType` like this:
     Example 7. Custom `BasicType` implementation
    
 
@@ -59,7 +57,7 @@ Example 11. Persisting the custom `BasicType`
 
     As you can see, the `BitSetType` takes care of the _Java-to-SQL_ and _SQL-to-Java_ type conversion.
 
-   ##### Implementing a `UserType`
+  ## Implementing a `UserType`
 
     
 
