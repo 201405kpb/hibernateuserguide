@@ -329,14 +329,54 @@ The entity mapping looks as follows:
 
    
 Example 14. Custom `UserType` mapping
+```java
+@Entity(name = "Product")
+public static class Product {
 
+    @Id
+    private Integer id;
+
+    @Type( type = "bitset" )
+    private BitSet bitSet;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public BitSet getBitSet() {
+        return bitSet;
+    }
+
+    public void setBitSet(BitSet bitSet) {
+        this.bitSet = bitSet;
+    }
+}
+```
  
 In this example, the `UserType` is registered under the `bitset` name, and this is done like this:
 
 Example 15. Register a Custom `UserType` implementatio
+```java
+configuration.registerTypeContributor( (typeContributions, serviceRegistry) -> {
+    typeContributions.contributeType( BitSetUserType.INSTANCE, "bitset");
+} );
+```
 
 or using the `MetadataBuilder`
+```java
+ServiceRegistry standardRegistry =
+    new StandardServiceRegistryBuilder().build();
 
+MetadataSources sources = new MetadataSources( standardRegistry );
+
+MetadataBuilder metadataBuilder = sources.getMetadataBuilder();
+
+metadataBuilder.applyBasicType( BitSetUserType.INSTANCE, "bitset" );
+```
    
 Like `BasicType`, you can also register the `UserType` using a simple name.
 
@@ -347,4 +387,28 @@ Without registration, the `UserType` mapping requires the fully-classified name:
 When running the previous test case against the `BitSetUserType` entity mapping, Hibernate executed the following SQL statements:
 
 Example 16. Persisting the custom `BasicType`
+```java
+DEBUG SQL:92 -
+    insert
+    into
+        Product
+        (bitSet, id)
+    values
+        (?, ?)
+
+DEBUG BitSetUserType:71 - Binding 1,10,11 to parameter 1
+TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [1]
+
+DEBUG SQL:92 -
+    select
+        bitsetuser0_.id as id1_0_0_,
+        bitsetuser0_.bitSet as bitSet2_0_0_
+    from
+        Product bitsetuser0_
+    where
+        bitsetuser0_.id=?
+
+TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
+DEBUG BitSetUserType:56 - Result set column bitSet2_0_0_ value is 1,10,11
+```
   
