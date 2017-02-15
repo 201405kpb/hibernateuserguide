@@ -136,4 +136,13 @@ Book/domainmodel/ 目录
         *   [5.10.2. Merging detached data](Book/pc/pc_merge.md)
     * [5.11. Checking persistent state](Book/pc/pc_contains.md)
     * [5.12. Evicting entities](Book/pc/evicting_entities.md)
+*   [6. Flushing](Book/flushing/README.md)
+    * [6.1. `AUTO` flush](#flushing-auto)
+        *   [6.1.1. `AUTO` flush on commit](code_auto_code_flush_on_commit)
+        *   [6.1.2. `AUTO` flush on JPQL/HQL query](#__code_auto_code_flush_on_jpql_hql_query)
+        *   [6.1.3. `AUTO` flush on native SQL query](#__code_auto_code_flush_on_native_sql_query)
+    * [6.2. `COMMIT` flush](#flushing-commit)
+    * [6.3. `ALWAYS` flush](#flushing-always)
+    * [6.4. `MANUAL` flush](#flushing-manual)
+    * [6.5. Flush operation order](#flushing-order)
 
