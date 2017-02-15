@@ -5,7 +5,6 @@ For example, you might want to persist properties of type `java.util.BigInteger`
 
 There are two approaches to developing a custom type:
 
-
 *   implementing a `BasicType` and registering it
 *   implement a `UserType` which doesn&#8217;t require type registration
  
