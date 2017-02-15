@@ -124,7 +124,7 @@ Book/domainmodel/ 目录
         *   [5.2.1. Capabilities](Book/pc/BytecodeEnhancement_capabilities.md)
         *   [5.2.2. Performing enhancement](Book/pc/BytecodeEnhancement_enhancement.md)
     * [5.3. Making entities persistent](Book/pc/pc_persist.md)
-    * [5.4. Deleting (removing) entities](Book/pc/pc_remove.md4)
+    * [5.4. Deleting (removing) entities](Book/pc/pc_remove.md)
     * [5.5. Obtain an entity reference without initializing its data](Book/pc/pc_get_reference.md)
     * [5.6. Obtain an entity with its data initialized](Book/pc/pc_find.md)
     * [5.7. Obtain an entity by natural-id](Book/pc/pc_find_natural_id.md)
