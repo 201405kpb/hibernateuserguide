@@ -17,14 +17,14 @@ As a JPA provider, Hibernate implements the Java Persistence API specifications 
 ![image](/Book/images/architecture/JPA_Hibernate.svg)
 >SessionFactory (`org.hibernate.SessionFactory`)
 
-A thread-safe (and immutable) representation of the mapping of the application domain model to a database.
-Acts as a factory for `org.hibernate.Session` instances. The `EntityManagerFactory` is the JPA equivalent of a `SessionFactory` and basically those two converge into the same `SessionFactory` implementation.
-A `SessionFactory` is very expensive to create, so, for any given database, the application should have only one associated `SessionFactory`.
-`SessionFactory`作为`org.hibernate.Session`实例的工厂，是应用程序域模型到数据库的映射的线程安全（和不可变）表示。JPA内的`EntityManagerFactory`对象等价于一个`SessionFactory`对象，基本上这两个对象是放到同一个`SessionFactory`实现中。
+>A thread-safe (and immutable) representation of the mapping of the application domain model to a database.Acts as a factory for `org.hibernate.Session` instances. The `EntityManagerFactory` is the JPA equivalent of a `SessionFactory` and basically those two converge into the same `SessionFactory` implementation.A `SessionFactory` is very expensive to create, so, for any given database, the application should have only one associated `SessionFactory`.
+
+>`SessionFactory`作为`org.hibernate.Session`实例的工厂，是应用程序域模型到数据库的映射的线程安全（和不可变）表示。JPA内的`EntityManagerFactory`对象等价于一个`SessionFactory`对象，基本上这两个对象是放到同一个`SessionFactory`实现中。
 创建一个`SessionFactory`是非常耗费资源的，所以，对于任何给定的数据库，应用程序应该只有一个相关联的`SessionFactory`。
 
-The `SessionFactory` maintains services that Hibernate uses across all `Session(s)` such as second level caches, connection pools, transaction system integrations, etc.
-`SessionFactory`保持Hibernate在所有“会话”中使用的服务，例如第二级缓存，连接池，事务系统集成等。
+>The `SessionFactory` maintains services that Hibernate uses across all `Session(s)` such as second level caches, connection pools, transaction system integrations, etc.
+
+>`SessionFactory`保持Hibernate在所有“会话”中使用的服务，例如第二级缓存，连接池，事务系统集成等。
 
 
 >Session (`org.hibernate.Session`)
