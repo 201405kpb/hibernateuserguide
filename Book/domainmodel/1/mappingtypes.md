@@ -1,16 +1,62 @@
-# 域模型
+# 类型映射
 
-The term [domain model](https://en.wikipedia.org/wiki/Domain_model) comes from the realm of data modeling.
-It is the model that ultimately describes the [problem domain](https://en.wikipedia.org/wiki/Problem_domain) you are working in.
-Sometimes you will also hear the term _persistent classes_.
+Hibernate understands both the Java and JDBC representations of application data.  
+The ability to read/write this data from/to the database is the function of a Hibernate _type_.  
+A type, in this usage, is an implementation of the `org.hibernate.type.Type` interface.  
+This Hibernate type also describes various aspects of behavior of the Java type such as how to check for equality, how to clone values, etc.
 
-Ultimately the application domain model is the central character in an ORM.
-They make up the classes you wish to map. Hibernate works best if these classes follow the Plain Old Java Object (POJO) / JavaBean programming model.
-However, none of these rules are hard requirements.
-Indeed, Hibernate assumes very little about the nature of your persistent objects. You can express a domain model in other ways (using trees of `java.util.Map` instances, for example).
+The Hibernate type is neither a Java type nor a SQL data type.  
+It provides information about both of these as well as understanding marshalling between.
+
+When you encounter the term type in discussions of Hibernate, it may refer to the Java type, the JDBC type, or the Hibernate type, depending on context.
+
+To help understand the type categorizations, let’s look at a simple table and domain model that we wish to map.
+
+```cpp
+create table Contact (
+    id integer not null,
+    first varchar(255),
+    last varchar(255),
+    middle varchar(255),
+    notes varchar(255),
+    starred boolean not null,
+    website varchar(255),
+    primary key (id)
+)
+
+public static class Contact {
+
+    @Id
+    private Integer id;
+
+    private Name name;
+
+    private String notes;
+
+    private URL website;
+
+    private boolean starred;
+
+    //Getters and setters are omitted for brevity
+}
+
+@Embeddable
+public class Name {
+
+    private String first;
+
+    private String middle;
+
+    private String last;
+
+    // getters and setters omitted
+}
+
+In the broadest sense, Hibernate categorizes types into two groups:
+```
+
+* [Value types](#categorization-value)
+* [Entity types](#categorization-entity)
 
 
-Historically applications using Hibernate would have used its proprietary XML mapping file format for this purpose.
-With the coming of JPA, most of this information is now defined in a way that is portable across ORM/JPA providers using annotations (and/or standardized XML format).
-This chapter will focus on JPA mapping where possible.
-For Hibernate mapping features not supported by JPA we will prefer Hibernate extension annotations.
+
