@@ -101,7 +101,7 @@ Book/domainmodel/ 目录
         *   [2.11.1. MappedSuperclass](Book/domainmodel/11/entityinheritancemappedsuperclass.md)
         *   [2.11.2. Single table](Book/domainmodel/11/entityinheritancesingletable.md)
         *   [2.11.3. Joined table](Book/domainmodel/11/entityinheritancejoinedtable.md)
-        *   [2.11.4. Table per class](Book/domainmodel/111/entityinheritancetableperclass.md)
+        *   [2.11.4. Table per class](Book/domainmodel/11/entityinheritancetableperclass.md)
         *   [2.12. Immutability](Book/domainmodel/11/entityimmutability.md)
             *   [2.12.1. Entity immutability](Book/domainmodel/11/entity_immutability.md)
         *   [2.12.2. Collection immutability](Book/domainmodel/11/collection_immutability.md)
