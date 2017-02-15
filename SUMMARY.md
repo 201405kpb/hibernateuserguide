@@ -108,7 +108,7 @@ Book/domainmodel/ 目录
     * [3.1. JPA Bootstrapping](Book/bootstrap/bootstrap_jpa.md)
         *   [3.1.1. JPA_compliant bootstrapping](Book/bootstrap/bootstrap_jpa_compliant.md)
         *   [3.1.2. Externalizing XML mapping files](Book/bootstrap/bootstrap_jpa_xml_files.md)
-        *   [3.2. Native Bootstrapping](Book/bootstrap/bootstrap_native.md)
+    * [3.2. Native Bootstrapping](Book/bootstrap/bootstrap_native.md)
         *   [3.2.1. Building the ServiceRegistry](Book/bootstrap/bootstrap_native_registry.md)
         *   [3.2.2. Event Listener registration](Book/bootstrap/bootstrap_event_listener_registration.md)
         *   [3.2.3. Building the Metadata](Book/bootstrap/bootstrap_native_metadata.md)
