@@ -2,10 +2,11 @@
 
 * [简介](README.md)
     * [日志](log.md)
-* [前言](Book/preface/)
-    * [Get Involved](#_get_involved)
-* [系统需求](#_system_requirements)
-    * [Getting Started Guide](#_getting_started_guide)
-* [1. 体系结构](#architecture)
-    * [1.1. Overview](#architecture-overview)
+* [前言](Book/preface/README.md)
+    * [前言](Book/preface/README.md)
+    * [参与](Book/preface/involved.md)
+* [系统需求](Book/system/README.md)
+    * [入门指南](Book/system/getting_started_guide.md)
+* [1. 体系结构](Book/architecture/README.md)
+    * [1.1. 体系结构概述](Book/architecture/architecture_overview.md)
 
