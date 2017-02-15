@@ -1,6 +1,5 @@
 # 值类型
 
-```js
 A value type is a piece of data that does not define its own lifecycle.
 It is, in effect, owned by an entity, which defines its lifecycle.
 
@@ -35,7 +34,6 @@ the name attribute is an example of an embeddable type, which is discussed in de
 <dd>
 
 although not featured in the aforementioned example, collection types are also a distinct category among value types. Collection types are further discussed in [_Collections_](#collections)
-```
 
 
 
