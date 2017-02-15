@@ -142,7 +142,6 @@ public class AcmeCorpPhysicalNamingStrategy implements PhysicalNamingStrategy {
 		return joined.toString();
 	}
 }
-    
 ```
 There are multiple ways to specify the PhysicalNamingStrategy to use. First, applications can specify
 the implementation using the `hibernate.physical_naming_strategy` configuration setting which accepts:
