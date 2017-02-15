@@ -28,17 +28,17 @@ As a JPA provider, Hibernate implements the Java Persistence API specifications 
 
 
 >Session (`org.hibernate.Session`)
-A single-threaded, short-lived object conceptually modeling a "Unit of Work".
-`Session`表示应用程序与持久储存层之间交互操作的一个单线程对象，此对象生存期很短。
+>A single-threaded, short-lived object conceptually modeling a "Unit of Work".
+>`Session`表示应用程序与持久储存层之间交互操作的一个单线程对象，此对象生存期很短。
 
-In JPA nomenclature, the `Session` is represented by an `EntityManager`.
+>In JPA nomenclature, the `Session` is represented by an `EntityManager`.
 在JPA命名法中，`Session`由`EntityManager`表示。
 
-Behind the scenes, the Hibernate `Session` wraps a JDBC `java.sql.Connection` and acts as a factory for `org.hibernate.Transaction` instances.It maintains a generally "repeatable read" persistence context (first level cache) of the application domain model.
-在幕后，Hibernate`Session`封装一个JDBC`java.sql.Connection`对象，并作为`org.hibernate.Transaction`实例的工厂。它维护应用程序域模型的一般“可重复读”持久性上下文（第一级缓存）。
+>Behind the scenes, the Hibernate `Session` wraps a JDBC `java.sql.Connection` and acts as a factory for `org.hibernate.Transaction` instances.It maintains a generally "repeatable read" persistence context (first level cache) of the application domain model.
+>在幕后，Hibernate`Session`封装一个JDBC`java.sql.Connection`对象，并作为`org.hibernate.Transaction`实例的工厂。它维护应用程序域模型的一般“可重复读”持久性上下文（第一级缓存）。
 
 >Transaction (`org.hibernate.Transaction`)
 A single-threaded, short-lived object used by the application to demarcate individual physical transaction boundaries.
+应用程序用来指定原子操作单元范围的对象，它是单线程的，生命周期很短。
 `EntityTransaction` is the JPA equivalent and both act as an abstraction API to isolate the application from the underlying transaction system in use (JDBC or JTA).
-应用程序使用的单线程，短期对象来划分单个物理事务边界。
-`EntityTransaction`是JPA等价物，并且都充当抽象API，以将应用程序与正在使用的底层事务系统（JDBC或JTA）隔离。
+`Transaction`与JPA中的`EntityTransaction`是等价的，并且都充当抽象API，以将应用程序与正在使用的底层事务系统（JDBC或JTA）隔离。
