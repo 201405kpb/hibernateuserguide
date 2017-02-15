@@ -1,8 +1,8 @@
 # 前言
 
-Working with both Object-Oriented software and Relational Databases can be cumbersome and time consuming. Development costs are significantly higher due to a paradigm mismatch between how data is represented in objects versus relational databases. Hibernate is an Object/Relational Mapping solution for Java environments. The term Object/Relational Mapping refers to the technique of mapping data from an object model representation to a relational data model representation \(and visa versa\).
+Working with both Object-Oriented software and Relational Databases can be cumbersome and time consuming. Development costs are significantly higher due to a paradigm mismatch between how data is represented in objects versus relational databases. Hibernate is an Object/Relational Mapping solution for Java environments. The term Object/Relational Mapping refers to the technique of mapping data from an object model representation to a relational data model representation (and visa versa).
 
-使用面向对象的软件和关系数据库可能是麻烦和耗时的。由于数据在对象和关系数据库之间的表示方式不匹配，开发成本显着更高。 Hibernate是一个用于Java环境的对象/关系映射解决方案。术语对象/关系映射是指将数据从对象模型表示映射到关系数据模型表示（反之亦然）的技术。
+在今日的企业环境中，把面向对象的软件和关系数据库一起使用可能是相当麻烦、浪费时间的。由于数据在对象和关系数据库之间的表示方式不匹配，开发成本显着增高。Hibernate是一个面向Java环境的对象/关系数据库映射工具。对象/关系数据库映射(object/relational mapping (ORM))这个术语表示一种技术，用来将数据从对象模型表示映射到关系数据模型表示（反之亦然）的技术。
 
 Hibernate not only takes care of the mapping from Java classes to database tables \(and from Java data types to SQL data types\), but also provides data query and retrieval facilities. It can significantly reduce development time otherwise spent with manual data handling in SQL and JDBC. Hibernate’s design goal is to relieve the developer from 95% of common data persistence-related programming tasks by eliminating the need for manual, hand-crafted data processing using SQL and JDBC. However, unlike many other persistence solutions, Hibernate does not hide the power of SQL from you and guarantees that your investment in relational technology and knowledge is as valid as always.
 
