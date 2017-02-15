@@ -1,7 +1,5 @@
 #值类型
 
- <div class="paragraph">
-
     A value type is a piece of data that does not define its own lifecycle.
     It is, in effect, owned by an entity, which defines its lifecycle.
 
@@ -37,8 +35,3 @@
 
     although not featured in the aforementioned example, collection types are also a distinct category among value types. Collection types are further discussed in [_Collections_](#collections)
 
-    </dd>
-    </dl>
-    </div>
-    </div>
-    <div class="sect3">
