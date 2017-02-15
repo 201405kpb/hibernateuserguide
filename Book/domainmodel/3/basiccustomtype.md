@@ -17,7 +17,35 @@ The first approach is to directly implement the `BasicType` interface.
 Because the `BasicType` interface has a lot of methods to implement, it&#8217;s much more convenient to extend the `AbstractStandardBasicType`,or the `AbstractSingleColumnStandardBasicType` if the value is stored in a single database column.
 
 First, we need to extend the `AbstractSingleColumnStandardBasicType` like this:
-    Example 7. Custom `BasicType` implementation
+Example 7. Custom `BasicType` implementation
+```java
+public class BitSetType
+        extends AbstractSingleColumnStandardBasicType<BitSet>
+        implements DiscriminatorType<BitSet> {
+
+    public static final BitSetType INSTANCE = new BitSetType();
+
+    public BitSetType() {
+        super( VarcharTypeDescriptor.INSTANCE, BitSetTypeDescriptor.INSTANCE );
+    }
+
+    @Override
+    public BitSet stringToObject(String xml) throws Exception {
+        return fromString( xml );
+    }
+
+    @Override
+    public String objectToSQLString(BitSet value, Dialect dialect) throws Exception {
+        return toString( value );
+    }
+
+    @Override
+    public String getName() {
+        return "bitset";
+    }
+
+}
+```
    
 The `AbstractSingleColumnStandardBasicType` requires an `sqlTypeDescriptor` and a `javaTypeDescriptor`.
 The `sqlTypeDescriptor` is `VarcharTypeDescriptor.INSTANCE` because the database column is a VARCHAR.
