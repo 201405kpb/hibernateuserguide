@@ -113,4 +113,9 @@ Book/domainmodel/ 目录
         *   [3.2.2. Event Listener registration](Book/bootstrap/2/bootstrap_event_listener_registration.md)
         *   [3.2.3. Building the Metadata](Book/bootstrap/2/bootstrap_native_metadata.md)
         *   [3.2.4. Building the SessionFactory](Book/bootstrap/2/bootstrap_native_SessionFactory.md)
+* [4. Schema generation](Book/schema_generation/README.md)
+    * [4.1. Importing script files](#schema-generation-script-files)
+    * [4.2. Database objects](#schema-generation-database-objects)
+    * [4.3. Database-level checks](#schema-generation-database-checks)
+    * [4.4. Default value for database column](#schema-generation-column-default-value)
 
