@@ -51,7 +51,14 @@
 
 **_Table 2. Java 8 BasicTypes_**
 
-| Hibernate type | JDBC type | Java type | BasicTypeRegistry key\(s\) |
+>| Hibernate type | JDBC type | Java type | BasicTypeRegistry key\(s\) |
 | :--- | :--- | :--- | :--- |
-
+|DurationType|BIGINT|java.time.Duration|Duration, java.time.Duration|
+|InstantType|TIMESTAMP|java.time.Instant|Instant, java.time.Instant|
+|LocalDateTimeType|TIMESTAMP|java.time.LocalDateTime|LocalDateTime, java.time.LocalDateTime|
+|LocalDateType|DATE|java.time.LocalDate|LocalDate, java.time.LocalDate|
+|LocalTimeType|TIME|java.time.LocalTime|LocalTime, java.time.LocalTime|
+|OffsetDateTimeType|TIMESTAMP||java.time.OffsetDateTime|OffsetDateTime, java.time.OffsetDateTime|
+|OffsetTimeType|TIME|java.time.OffsetTime|OffsetTime, java.time.OffsetTime|
+|OffsetTimeType|TIMESTAMP|java.time.ZonedDateTime|ZonedDateTime, java.time.ZonedDateTime|
 
