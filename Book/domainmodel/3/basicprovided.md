@@ -69,6 +69,7 @@
 |JTSGeometryType|depends on the dialect|com.vividsolutions.jts.geom.Geometry|jts_geometry, or the classname of Geometry or any of its subclasses|
 |GeolatteGeometryType|depends on the dialect|org.geolatte.geom.Geometry|geolatte_geometry, or the classname of Geometry or any of its subclasses|
 
-
+>![](/Book/images/org/hibernate/docbook/note.png)
+To use these hibernate-spatial types just must add the hibernate-spatial dependency to your classpath and use a the org.hibernate.spatial.SpatialDialect. See Spatial for more about spatial types.
 
 
