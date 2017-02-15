@@ -114,8 +114,8 @@ Book/domainmodel/ 目录
         *   [3.2.3. Building the Metadata](Book/bootstrap/2/bootstrap_native_metadata.md)
         *   [3.2.4. Building the SessionFactory](Book/bootstrap/2/bootstrap_native_SessionFactory.md)
 * [4. Schema generation](Book/schema_generation/README.md)
-    * [4.1. Importing script files](#schema-generation-script-files)
-    * [4.2. Database objects](#schema-generation-database-objects)
-    * [4.3. Database-level checks](#schema-generation-database-checks)
-    * [4.4. Default value for database column](#schema-generation-column-default-value)
+    * [4.1. Importing script files](Book/schema_generation/schema_generation_script_files.md)
+    * [4.2. Database objects](Book/schema_generation/schema_generation_database_objects.md)
+    * [4.3. Database-level checks](Book/schema_generation/schema_generation_database_checks.md)
+    * [4.4. Default value for database column](Book/schema_generation/schema_generation_column_default_value.md)
 
