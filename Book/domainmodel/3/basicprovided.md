@@ -62,3 +62,13 @@
 |OffsetTimeType|TIME|java.time.OffsetTime|OffsetTime, java.time.OffsetTime|
 |OffsetTimeType|TIMESTAMP|java.time.ZonedDateTime|ZonedDateTime, java.time.ZonedDateTime|
 
+**_Table 3. Hibernate Spatial BasicTypes_**
+
+| Hibernate type | JDBC type | Java type | BasicTypeRegistry key\(s\) |
+| :--- | :--- | :--- | :--- |
+|JTSGeometryType|depends on the dialect|com.vividsolutions.jts.geom.Geometry|jts_geometry, or the classname of Geometry or any of its subclasses|
+|GeolatteGeometryType|depends on the dialect|org.geolatte.geom.Geometry|geolatte_geometry, or the classname of Geometry or any of its subclasses|
+
+
+
+
