@@ -12,7 +12,7 @@ When you encounter the term type in discussions of Hibernate, it may refer to th
 
 To help understand the type categorizations, let’s look at a simple table and domain model that we wish to map.
 
-```cpp
+```sql
 create table Contact (
     id integer not null,
     first varchar(255),
@@ -23,7 +23,8 @@ create table Contact (
     website varchar(255),
     primary key (id)
 )
-
+```
+```java
 public static class Contact {
 
     @Id
@@ -51,10 +52,9 @@ public class Name {
 
     // getters and setters omitted
 }
-
-In the broadest sense, Hibernate categorizes types into two groups:
 ```
 
+In the broadest sense, Hibernate categorizes types into two groups:
 * [Value types](#categorization-value)
 * [Entity types](#categorization-entity)
 
