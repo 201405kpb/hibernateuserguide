@@ -1,6 +1,6 @@
 #域模型
 
-* [2.1. 类型映射](Book/domainmodel/1/mappingtypes.md)
+* [2.1. 类型映射](1/mappingtypes.md)
     *   [2.1.1. 值类型](Book/domainmodel/1/categorizationvalue.md)
     *   [2.1.2. 实体类型](Book/domainmodel/1/categorizationentity.md)
 * [2.2. 命名策略](Book/domainmodel/2/naming.md)
