@@ -1,6 +1,6 @@
 # Hibernate的基础类型
-
-| Hibernate type | JDBC type | Java type | BasicTypeRegistry key\(s\) |
+**_Table 1. Standard BasicTypes_**
+>| Hibernate type | JDBC type | Java type | BasicTypeRegistry key\(s\) |
 | :--- | :--- | :--- | :--- |
 |StringType|VARCHAR|java.lang.String|string, java.lang.String|
 |MaterializedClob|CLOB|java.lang.String|materialized_clob|
@@ -47,4 +47,5 @@
 |MaterializedNClobType|NCLOB|java.lang.String|materialized_nclob|
 |PrimitiveCharacterArrayNClobType|NCHAR|char[]|N/A|
 |CharacterNCharType|NCHAR|java.lang.Character|ncharacter|
-|CharacterArrayNClobType|NCLOB|java.lang.Character[]|N/A
+|CharacterArrayNClobType|NCLOB|java.lang.Character[]|N/A|
+
