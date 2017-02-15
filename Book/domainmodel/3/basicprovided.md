@@ -49,3 +49,9 @@
 |CharacterNCharType|NCHAR|java.lang.Character|ncharacter|
 |CharacterArrayNClobType|NCLOB|java.lang.Character[]|N/A|
 
+**_Table 2. Java 8 BasicTypes_**
+
+| Hibernate type | JDBC type | Java type | BasicTypeRegistry key\(s\) |
+| :--- | :--- | :--- | :--- |
+
+
