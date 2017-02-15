@@ -104,4 +104,13 @@ Book/domainmodel/ 目录
     * [2.12. 不变性](Book/domainmodel/12/entityimmutability.md)
         *   [2.12.1. 实体不变性](Book/domainmodel/12/entity_immutability.md)
         *   [2.12.2. 集合不变性](Book/domainmodel/12/collection_immutability.md)
+* [3. Bootstrap](Book/bootstrap/README.md)
+    * [3.1. JPA Bootstrapping](#bootstrap-jpa)
+        *   [3.1.1. JPA-compliant bootstrapping](#bootstrap-jpa-compliant)
+        *   [3.1.2. Externalizing XML mapping files](#bootstrap-jpa-xml-files)
+        *   [3.2. Native Bootstrapping](#bootstrap-native)
+        *   [3.2.1. Building the ServiceRegistry](#bootstrap-native-registry)
+        *   [3.2.2. Event Listener registration](#bootstrap-event-listener-registration)
+        *   [3.2.3. Building the Metadata](#bootstrap-native-metadata)
+        *   [3.2.4. Building the SessionFactory](#bootstrap-native-SessionFactory)
 
