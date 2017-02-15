@@ -101,7 +101,7 @@ Book/domainmodel/ 目录
         *   [2.11.2. 简单表](Book/domainmodel/11/entityinheritancesingletable.md)
         *   [2.11.3. 连接表](Book/domainmodel/11/entityinheritancejoinedtable.md)
         *   [2.11.4. Tableperclass](Book/domainmodel/11/entityinheritancetableperclass.md)
-    * [2.12. 不变性](Book/domainmodel/11/entityimmutability.md)
-        *   [2.12.1. 实体不变性](Book/domainmodel/11/entity_immutability.md)
-        *   [2.12.2. 集合不变性](Book/domainmodel/11/collection_immutability.md)
+    * [2.12. 不变性](Book/domainmodel/12/entityimmutability.md)
+        *   [2.12.1. 实体不变性](Book/domainmodel/12/entity_immutability.md)
+        *   [2.12.2. 集合不变性](Book/domainmodel/12/collection_immutability.md)
 
