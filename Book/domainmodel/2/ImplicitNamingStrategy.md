@@ -7,7 +7,7 @@
     examples of the role of the `org.hibernate.boot.model.naming.ImplicitNamingStrategy` contract to
     determine a logical name when the mapping did not provide an explicit name.
 
-[Implicit Naming Strategy Diagram](/images/domain/naming/implicit_naming_strategy_diagram.svg)
+[Implicit Naming Strategy Diagram](../../images/domain/naming/implicit_naming_strategy_diagram.svg)
 
     Hibernate defines multiple ImplicitNamingStrategy implementations out-of-the-box.  Applications
     are also free to plug-in custom implementations.
