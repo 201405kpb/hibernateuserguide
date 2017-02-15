@@ -56,7 +56,7 @@ public class Name {
 
 In the broadest sense, Hibernate categorizes types into two groups:
 * [Value types](categorizationvalue.md)
-* [Entity types](#categorization-entity)
+* [Entity types](categorizationentity.md)
 
 
 
