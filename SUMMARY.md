@@ -97,7 +97,7 @@ Book/domainmodel/ 目录
         *   [2.9.3. Natural Id  Mutability and Caching](Book/domainmodel/9/naturalidmutabilitycaching.md)
     * [2.10. 动态实体类型](Book/domainmodel/10/dynamicmodel.md)
         *   [2.10.1. Dynamic mapping models](Book/domainmodel/10/mappingmodeldynamic.md)
-    * [2.11. Inheritance](Book/domainmodel/11/entityinheritance.md)
+    * [2.11. 继承关系](Book/domainmodel/11/entityinheritance.md)
         *   [2.11.1. MappedSuperclass](Book/domainmodel/11/entityinheritancemappedsuperclass.md)
         *   [2.11.2. Single table](Book/domainmodel/11/entityinheritancesingletable.md)
         *   [2.11.3. Joined table](Book/domainmodel/11/entityinheritancejoinedtable.md)
