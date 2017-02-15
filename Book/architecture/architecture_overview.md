@@ -1,6 +1,6 @@
 # 体系结构概述
 
-![Data Access Layers](images/architecture/data_access_layers.svg)
+![Data Access Layers](Book/images/architecture/data_access_layers.svg)
 
 Hibernate, as an ORM solution, effectively "sits between" the Java application data access layer and the Relational Database, as can be seen in the diagram above.
 The Java application makes use of the Hibernate APIs to load, store, query, etc its domain data.
