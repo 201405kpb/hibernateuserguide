@@ -1,4 +1,4 @@
-### Get Involved
+#参与
 
 * Use Hibernate and report any bugs or issues you find. See [Issue Tracker](http://hibernate.org/issuetracker) for details.
 
