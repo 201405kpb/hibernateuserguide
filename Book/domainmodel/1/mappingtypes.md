@@ -1,7 +1,7 @@
 # 类型映射
 
 Hibernate understands both the Java and JDBC representations of application data.  
-The ability to read/write this data from/to the database is the function of a Hibernate _type_.  
+The ability to read/write this data from/to the database is the function of a Hibernate type.  
 A type, in this usage, is an implementation of the `org.hibernate.type.Type` interface.  
 This Hibernate type also describes various aspects of behavior of the Java type such as how to check for equality, how to clone values, etc.
 
