@@ -205,7 +205,7 @@ Book/domainmodel/ 目录
         *   [13.1.2. Caching configuration properties](Book/caching/caching-config-properties.md)
     * [13.2. Configuring second-level cache mappings](Book/caching/caching-mappings.md)
     * [13.3. Entity inheritance and second-level cache mapping](Book/caching/caching-mappings-inheritance.md)
-    * [13.4. Entity cache](Book/caching/caching-query.md)
+    * [13.4. Entity cache](Book/caching/entity-query.md)
     * [13.5. Collection cache](Book/caching/caching-collection.md)
     * [13.6. Query cache](Book/caching/caching-query.md)
         *   [13.6.1. Query cache regions](Book/caching/caching-query-region.md)
