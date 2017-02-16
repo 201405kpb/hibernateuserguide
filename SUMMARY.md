@@ -336,7 +336,7 @@ Book/domainmodel/ 目录
     * [20.3. features.xml](Book/osgi/features_xml.md)
     * [20.4. QuickStarts/Demos](Book/osgi/quickstarts_demos.md)
     * [20.5. Container-Managed JPA](Book/osgi/osgi-managed-jpa.md)
-    * [20.6. Enterprise OSGi JPA Container](Book/osgi/enterprise_*osgi_jpa_container.md)
+    * [20.6. Enterprise OSGi JPA Container](Book/osgi/enterprise_osgi_jpa_container.md)
     * [20.7. persistence.xml](Book/osgi/persistence_xml.md)
     * [20.8. DataSource](Book/osgi/datasource.md)
     * [20.9. Bundle Package Imports](Book/osgi/bundle_package_imports.md)
