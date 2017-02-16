@@ -1,5 +1,8 @@
 {
     "title" : "Gitbook Use",
+    "author" : "zhangjikai",
+    "description" : "记录Gitbook的配置和一些插件的使用",
+    "language" : "zh-hans",
     "styles": {
         "website": "styles/website.css",
         "ebook": "styles/ebook.css",
