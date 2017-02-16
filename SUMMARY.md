@@ -328,7 +328,7 @@ Book/domainmodel/ 目录
     * [19.3. Partitioned (discriminator) data](Book/multitenacy/multitenacy-discriminator.md)
     * [19.4. Multitenancy in Hibernate](Book/multitenacy/multitenacy-hibernate.md)
         *   [19.4.1. MultiTenantConnectionProvider](Book/multitenacy/multitenacy-hibernate-MultiTenantConnectionProvider.md)
-        *   [19.4.2. CurrentTenantIdentifierResolver](Book/multitenacy/multitenacy-hibernate-MultiTenantConnectionProvider.md)
+        *   [19.4.2. CurrentTenantIdentifierResolver](Book/multitenacy/multitenacy-hibernate-CurrentTenantIdentifierResolver.md)
         *   [19.4.3. Caching](Book/multitenacy/multitenacy-hibernate-caching.md)
 * [20. OSGi](Book/osgi/README.md)
     * [20.1. OSGi Specification and Environment](Book/osgi/osgi_specification_and_environment.md)
