@@ -1,4 +1,4 @@
-    ## 30. Legacy Hibernate Native Queries
+## 30. Legacy Hibernate Native Queries
 
-    <div class="sectionbody">
-    <div class="sect2">
+<div class="sectionbody">
+<div class="sect2">

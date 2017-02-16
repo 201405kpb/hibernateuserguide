@@ -577,7 +577,7 @@
     * [24.2.69. @Proxy注解](Book/annotations/2/annotations-hibernate-proxy.md)
     * [24.2.70. @RowId注解](Book/annotations/2/annotations-hibernate-rowid.md)
     * [24.2.71. @SelectBeforeUpdate注解](Book/annotations/2/annotations-hibernate-selectbeforeupdate.md)
-    * [24.2.72. Sort注解](Book/annotations/2/annotations-hibernate-sort.md)
+    * [24.2.72. @Sort注解](Book/annotations/2/annotations-hibernate-sort.md)
     * [24.2.73. @SortComparator注解](Book/annotations/2/annotations-hibernate-sortcomparator.md)
     * [24.2.74. @SortNatural注解](Book/annotations/2/annotations-hibernate-sortnatural.md)
     * [24.2.75. @Source注解](Book/annotations/2/annotations-hibernate-source.md)
