@@ -402,7 +402,7 @@
   * [23.10. 缓存属性](Book/configurations/configurations-cache.md)
   * [23.11. Infinispan 配置](Book/configurations/configurations-infinispan.md)
   * [23.12. 事物属性](Book/configurations/configurations-transactions.md)
-  * [23.13. 多用户设置](Book/configurations/configurations-multi-tenancy.md)
+  * [23.13. Multi-tenancy settings](Book/configurations/configurations-multi-tenancy.md)
   * [23.14. 自动模式生成](Book/configurations/configurations-hbmddl.md)
   * [23.15. 异常处理](Book/configurations/configurations-exception-handling.md)
   * [23.16. 回话事件](Book/configurations/configurations-session-events.md)
