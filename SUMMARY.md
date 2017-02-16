@@ -410,7 +410,7 @@
   * [23.18. JACC 设置](Book/configurations/configurations-jacc.md)
   * [23.19. 类加载器属性](Book/configurations/configurations-misc.md)
   * [23.20. 引导属性 ](Book/configurations/configurations-bootstrap.md)
-  * [23.21. 其他属性](Book/configurations/configurations-misc.md)
+  * [23.21. 其他属性](Book/configurations/configurationsmisc.md)
   * [23.22. Envers 属性](Book/configurations/configurations-envers.md)
   * [23.23. 空间属性](Book/configurations/configurations-spatial.md)
   * [23.24. 内部属性](Book/configurations/configurations-internal.md)
