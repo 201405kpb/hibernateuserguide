@@ -1,28 +1,30 @@
 #显示命名策略
 
-Many organizations define rules around the naming of database objects (tables, columns, foreign-keys, etc).
-The idea of a PhysicalNamingStrategy is to help implement such naming rules without having to hard-code them into the mapping via explicit names.
+Many organizations define rules around the naming of database objects (tables, columns, foreign-keys, etc).The idea of a PhysicalNamingStrategy is to help implement such naming rules without having to hard-code them into the mapping via explicit names.
+许多组织定义围绕数据库对象（表，列，外键等）命名的规则。 PhysicalNamingStrategy的想法是帮助实现这样的命名规则，而不必通过显式名称将它们硬编码到映射中。
 
-While the purpose of an ImplicitNamingStrategy is to determine that an attribute named `accountNumber` maps to
-a logical column name of `accountNumber` when not explicitly specified, the purpose of a PhysicalNamingStrategy
-would be, for example, to say that the physical column name should instead be abbreviated `acct_num`.
+While the purpose of an ImplicitNamingStrategy is to determine that an attribute named `accountNumber` maps toa logical column name of `accountNumber` when not explicitly specified, the purpose of a PhysicalNamingStrategywould be, for example, to say that the physical column name should instead be abbreviated `acct_num`.
+虽然ImplicitNamingStrategy的目的是在未明确指定时确定名为accountNumber的属性映射到accountNumber的逻辑列名称，但是PhysicalNamingStrategy的目的将是将物理列名称应缩写为acct_num 。
 
-It is true that the resolution to `acct_num` could have been handled in an ImplicitNamingStrategy in this case.
+>![PhysicalNamingStrategy](/Book/images/org/hibernate/docbook/note.png)
+>It is true that the resolution to `acct_num` could have been handled in an ImplicitNamingStrategy in this case.
 But the point is separation of concerns. The PhysicalNamingStrategy will be applied regardless of whether
 the attribute explicitly specified the column name or whether we determined that implicitly. The
 ImplicitNamingStrategy would only be applied if an explicit name was not given. So it depends on needs
 and intent.
-
+>事实上，在这种情况下，acct_num的决议可以在ImplicitNamingStrategy中处理。 但关键是分离关注点。 无论属性是否明确指定列名称或是否隐式确定，都将应用PhysicalNamingStrategy。 ImplicitNamingStrategy只有在未给出显式名称的情况下才会应用。 所以它取决于需要和意图。
 
 The default implementation is to simply use the logical name as the physical name. However
 applications and integrations can define custom implementations of this PhysicalNamingStrategy
 contract. Here is an example PhysicalNamingStrategy for a fictitious company named Acme Corp
 whose naming standards are to:
+默认实现是简单地使用逻辑名作为物理名称。 然而，集成应用程序可以自定义PhysicalNamingStrategy接口的实现。 下面是一个名为Acme Corp的虚拟公司的PhysicalNamingStrategy示例，其命名标准是：
 
 * prefer underscore-delimited words rather than camel-casing
+* 优选下划线分隔的词而不是骆驼壳
 * replace certain words with standard abbreviations
-
-Example 2. Example PhysicalNamingStrategy implementation
+* 用标准缩写代替某些单词
+Example 2. 自定义PhysicalNamingStrategy实现实例
 ```java
 /*
  * Hibernate, Relational Persistence for Idiomatic Java
