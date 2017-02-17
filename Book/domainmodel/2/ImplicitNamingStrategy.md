@@ -43,6 +43,6 @@ the implementation using the `hibernate.implicit_naming_strategy` configuration 
 Secondly, applications and integrations can leverage `org.hibernate.boot.MetadataBuilder#applyImplicitNamingStrategy`
 to specify the ImplicitNamingStrategy to use. See
 [Bootstrap](/Book/bootstrap/README.md) for additional details on bootstrapping.
-其次，应用程序可以利用`org.hibernate.boot.MetadataBuilder`接口的`applyImplicitNamingStrategy`方法指定要使用的ImplicitNamingStrategy。 有关引导的更多详细信息可以[参考这里](Book/bootstrap/README.md)。
+其次，应用程序可以利用`org.hibernate.boot.MetadataBuilder`接口的`applyImplicitNamingStrategy`方法指定要使用的ImplicitNamingStrategy。 有关引导的更多详细信息可以[参考这里](/Book/bootstrap/README.md)。
 
 
