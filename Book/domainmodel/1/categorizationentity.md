@@ -6,6 +6,6 @@ Entities, by nature of their unique identifier, exist independently of other obj
 The `Contact` class itself would be an example of an entity.
 `Contact`类本身就是一个实体的例子。
 
-Mapping entities is discussed in detail in [Entity](#entity).
-实体映射将在[这里](#)进行详细讨论。
+Mapping entities is discussed in detail in [Entity](/Book/domainmodel/5/entity.md).
+实体映射将在[这里](/Book/domainmodel/5/entity.md)进行详细讨论。
  

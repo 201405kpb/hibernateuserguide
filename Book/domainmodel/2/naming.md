@@ -6,11 +6,11 @@ Part of the mapping of an object model to the relational database is mapping nam
 * The first stage is determining a proper logical name from the domain model mapping. A
 logical name can be either explicitly specified by the user (using `@Column` or
 `@Table` e.g.) or it can be implicitly determined by Hibernate through an
-[ImplicitNamingStrategy](#ImplicitNamingStrategy) contract.
-* 第一阶段是从域模型映射确定合适的逻辑名。 一个逻辑名可以由用户显式指定（例如,使用`@ Column`或`@ Table`注解）或者它可以由Hibernate通过隐式确定[隐式命名策略](#ImplicitNamingStrategy)。
+[ImplicitNamingStrategy](/Book/domainmodel/2/ImplicitNamingStrategy.md) contract.
+* 第一阶段是从域模型映射确定合适的逻辑名。 一个逻辑名可以由用户显式指定（例如,使用`@ Column`或`@ Table`注解）或者它可以由Hibernate通过隐式确定[隐式命名策略](/Book/domainmodel/2/ImplicitNamingStrategy.md)。
 * Second is the resolving of this logical name to a physical name which is defined
-by the [PhysicalNamingStrategy](#PhysicalNamingStrategy) contract.
-* 第二是将该逻辑名称解析为通过[显示命名策略](＃PhysicalNamingStrategy)实现的物理名称。
+by the [PhysicalNamingStrategy](/Book/domainmodel/2/ImplicitNamingStrategy.md) contract.
+* 第二是将该逻辑名称解析为通过[显示命名策略](/Book/domainmodel/2/PhysicalNamingStrategy.md)实现的物理名称。
 
 >![Historical NamingStrategy contract](/Book/images/org/hibernate/docbook/note.png)
 >Historical NamingStrategy contract
