@@ -7,7 +7,7 @@ New users may want to first look through the [Hibernate Getting Started Guide](h
 There is also a series of [topical guides](http://docs.jboss.org/hibernate/orm/5.2/topical/html_single/) providing deep dives into various topics.
 一系列的[主题指南](http://docs.jboss.org/hibernate/orm/5.2/topical/html_single/)提供深入到各种主题的各个方面。
 
->![](/Book/images/org/hibernate/docbook/note.png)
+>![DocbookNote](/Book/images/org/hibernate/docbook/note.png)
 >While having a strong background in SQL is not required to use Hibernate, it certainly helps a lot because it all boils down to SQL statements.Probably even more important is an understanding of data modeling principles.You might want to consider these resources as a good starting point:
 >虽然对sql语句掌握非常熟的开发人员可以不需要使用Hibernate，但是由于Hibernate可以归结为SQL语句,它肯定会对开发人员有很多帮助。开发人员甚至可能会了解更重要的数据建模原则。开发人员可能会把下列资源作为一个好的起点：
 >*   [Data Modeling Wikipedia definition](http://en.wikipedia.org/wiki/Data_modeling)
