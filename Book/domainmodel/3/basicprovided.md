@@ -73,6 +73,7 @@ _**Table 3. Hibernate Spatial BasicTypes**_
 
 > ![](/Book/images/org/hibernate/docbook/note.png)  
 > To use these hibernate-spatial types just must add the hibernate-spatial dependency to your classpath and use a the org.hibernate.spatial.SpatialDialect. See Spatial for more about spatial types.
+>要使用这些hibernate-spatial类型，只需要在类路径中添加hibernate-spatial依赖，并使用org.hibernate.spatial.SpatialDialect。 有关空间类型的更多信息，请参阅空间。
 
 These mappings are managed by a service inside Hibernate called the org.hibernate.type.BasicTypeRegistry, which essentially maintains a map of org.hibernate.type.BasicType (a org.hibernate.type.Type specialization) instances keyed by a name. That is the purpose of the "BasicTypeRegistry key(s)" column in the previous tables.
 
