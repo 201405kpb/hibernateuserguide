@@ -46,48 +46,53 @@ public class Product {
 >JPA规范严格限制可以标记为基本的Java类型到以下列表：
 
 >* Java primitive types (`boolean`, `int`, etc)
-* Java 原始类型（例如 `boolean`, `int`等）
-* wrappers for the primitive types (`java.lang.Boolean`, `java.lang.Integer`, etc)
-* 原始类型的封装器（例如 `java.lang.Boolean`, `java.lang.Integer`等 ）
-* `java.lang.String`
-* `java.lang.String`类型
-* `java.math.BigInteger`
-* `java.math.BigInteger`类型
-* `java.math.BigDecimal`
-* `java.math.BigDecimal`类型
-* `java.util.Date`
-* `java.util.Date` 类型
-* `java.util.Calendar`
-* `java.util.Calendar`类型
-* `java.sql.Date`
-* `java.sql.Date`类型
-* `java.sql.Time`
-* `java.sql.Time` 类型
-* `java.sql.Timestamp`
-* `java.sql.Timestamp`类型
-* `byte[]` or `Byte[]`
-* `byte[]`类型或 `Byte[]`类型
-* `char[]` or `Character[]`
-* `char[]`类型或 `Character[]`类型
-* `enums`
-* `enums` 类型
-* any other type that implements `Serializable` (JPA&#8217;s "support" for `Serializable` types is to directly serialize their state to the database).
-* 任何其他实现“Serializable”的类型（JPA对“Serializable”类型的“支持”是直接将其状态序列化到数据库）。
+>* Java 原始类型（例如 `boolean`, `int`等）
+>* wrappers for the primitive types (`java.lang.Boolean`, `java.lang.Integer`, etc)
+>* 原始类型的封装器（例如 `java.lang.Boolean`, `java.lang.Integer`等 ）
+>* `java.lang.String`
+>* `java.lang.String`类型
+>* `java.math.BigInteger`
+>* `java.math.BigInteger`类型
+>* `java.math.BigDecimal`
+>* `java.math.BigDecimal`类型
+>* `java.util.Date`
+>* `java.util.Date` 类型
+>* `java.util.Calendar`
+>* `java.util.Calendar`类型
+>* `java.sql.Date`
+>* `java.sql.Date`类型
+>* `java.sql.Time`
+>* `java.sql.Time` 类型
+>* `java.sql.Timestamp`
+>* `java.sql.Timestamp`类型
+>* `byte[]` or `Byte[]`
+>* `byte[]`类型或 `Byte[]`类型
+>* `char[]` or `Character[]`
+>* `char[]`类型或 `Character[]`类型
+>* `enums`
+>* `enums` 类型
+>* any other type that implements `Serializable` (JPA&#8217;s "support" for `Serializable` types is to directly serialize their state to the database).
+>* 任何其他实现“Serializable”的类型（JPA对“Serializable”类型的“支持”是直接将其状态序列化到数据库）。
 
 >If provider portability is a concern, you should stick to just these basic types.
-Note that JPA 2.1 did add the notion of a `javax.persistence.AttributeConverter` to help alleviate some of these concerns; see [JPA 2.1 AttributeConverters](#basic-jpa-convert) for more on this topic.
-如果提供者的可移植性是一个问题，你应该坚持只是这些基本类型。注意JPA 2.1添加了一个`javax.persistence.AttributeConverter`的概念来帮助缓解这些问题; 有关此主题的更多信息，请参阅[JPA 2.1 AttributeConverters](＃basic-jpa-convert)。
+Note that JPA 2.1 did add the notion of a `javax.persistence.AttributeConverter` to help alleviate some of these concerns; see [JPA 2.1 AttributeConverters](/Book/domainmodel/3/basiccustomtype.md) for more on this topic.
+>如果提供者的可移植性是一个问题，你应该坚持只是这些基本类型。注意JPA 2.1添加了一个`javax.persistence.AttributeConverter`的概念来帮助缓解这些问题; 有关此主题的更多信息，请参阅[JPA 2.1 AttributeConverters](/Book/domainmodel/3/basiccustomtype.md)。
 
 
 The `@Basic` annotation defines 2 attributes.
+`@Basic`注解拥有两个属性
 
+>_**optional - boolean (defaults to true)**_
+>_**可选的- boolean类型(默认为true)**_
 
-Defines whether this attribute allows nulls.
-JPA defines this as "a hint", which essentially means that it effect is specifically required.
-As long as the type is not primitive, Hibernate takes this to mean that the underlying column should be `NULLABLE`.
+>Defines whether this attribute allows nulls.JPA defines this as "a hint", which essentially means that it effect is specifically required.As long as the type is not primitive, Hibernate takes this to mean that the underlying column should be `NULLABLE`.
+>定义此属性是否允许空值。JPA将此定义为“提示”，这本质上意味着它的效果是特别需要的。只要类型不是原始类型，就意味着Hibernate底层列应该是NULLABLE。
 
+**_fetch - FetchType (defaults to EAGER)_**
+**_fetch - FetchType类型 (默认值为 EAGER)_**
 Defines whether this attribute should be fetched eagerly or lazily.
 JPA says that EAGER is a requirement to the provider (Hibernate) that the value should be fetched when the owner is fetched, while LAZY is merely a hint that the value be fetched when the attribute is accessed.
 Hibernate ignores this setting for basic types unless you are using bytecode enhancement.
-See the [BytecodeEnhancement](#BytecodeEnhancement) for additional information on fetching and on bytecode enhancement.
+See the [BytecodeEnhancement](/Book/pc/BytecodeEnhancement.md) for additional information on fetching and on bytecode enhancement.
+定义此属性是否应急切或延迟提取。 JPA规定，EAGER是提供程序（Hibernate）的一个要求，即在获取所有者时应该获取值，而LAZY只是在访问属性时提取值。 Hibernate忽略基本类型的此设置，除非您使用字节码增强。 有关获取和字节码增强的更多信息，请参阅[BytecodeEnhancement](/Book/pc/BytecodeEnhancement.md)。
 
