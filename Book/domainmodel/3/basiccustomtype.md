@@ -23,8 +23,10 @@ The first approach is to directly implement the `BasicType` interface. Because t
 第一种方法是直接实现`BasicType`接口。 因为`BasicType`接口有很多实现方法，所以如果值存储在单个数据库列中，那么扩展`AbstractStandardBasicType`或`AbstractSingleColumnStandardBasicType`将会更加方便。
 
 First, we need to extend the `AbstractSingleColumnStandardBasicType` like this:
-首先
-Example 7. Custom `BasicType` implementation
+首先,我们需要像以下方式实现`AbstractSingleColumnStandardBasicType`：
+
+**_Example 7. Custom `BasicType` implementation_**
+**_例 7. 自定义`BasicType` 接口的实现_**
 ```java
 public class BitSetType
         extends AbstractSingleColumnStandardBasicType<BitSet>
@@ -57,6 +59,9 @@ public class BitSetType
 The `AbstractSingleColumnStandardBasicType` requires an `sqlTypeDescriptor` and a `javaTypeDescriptor`.
 The `sqlTypeDescriptor` is `VarcharTypeDescriptor.INSTANCE` because the database column is a VARCHAR.
 On the Java side, we need to use a `BitSetTypeDescriptor` instance which can be implemented like this:
+`AbstractSingleColumnStandardBasicType`需要一个`sqlTypeDescriptor`和`javaTypeDescriptor`。
+`sqlTypeDescriptor'是`VarcharTypeDescriptor.INSTANCE`，因为数据库列是一个VARCHAR。
+在Java方面，我们需要使用一个`BitSetTypeDescriptor`实例，它可以这样实现：
 
 Example 8. Custom AbstractTypeDescriptor implementation
 ```java
