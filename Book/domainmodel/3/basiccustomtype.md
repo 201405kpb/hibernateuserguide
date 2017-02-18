@@ -2,21 +2,28 @@
 
 Hibernate makes it relatively easy for developers to create their own basic type mappings type.
 For example, you might want to persist properties of type `java.util.BigInteger` to `VARCHAR` columns, or support completely new types.
+Hibernate使开发人员能够相对容易地创建自己的基本类型映射类型。 例如，您可能希望将类型java.util.BigInteger的属性保留到VARCHAR列，或者支持完全新的类型。
 
 There are two approaches to developing a custom type:
+有两种方法来开发自定义类型：
 
-*   implementing a `BasicType` and registering it
-*   implement a `UserType` which doesn&#8217;t require type registration
+>*   implementing a `BasicType` and registering it
+>*    实现一个BasicType并注册它
+>*   implement a `UserType` which doesn&#8217;t require type registration
+>*    实现不需要类型注册的“UserType”
  
  As a means of illustrating the different approaches, let&#8217;s consider a use case where we need to support a `java.util.BitSet` mapping that&#8217;s stored as a VARCHAR.
+ 为了说明不同的方法，让我们考虑一个用例，我们需要支持一个存储为VARCHAR的java.util.BitSet映射。
 
 
 ## Implementing a `BasicType`
+## 实现 `BasicType`接口
 
-The first approach is to directly implement the `BasicType` interface.
-Because the `BasicType` interface has a lot of methods to implement, it&#8217;s much more convenient to extend the `AbstractStandardBasicType`,or the `AbstractSingleColumnStandardBasicType` if the value is stored in a single database column.
+The first approach is to directly implement the `BasicType` interface. Because the `BasicType` interface has a lot of methods to implement, it&#8217;s much more convenient to extend the `AbstractStandardBasicType`,or the `AbstractSingleColumnStandardBasicType` if the value is stored in a single database column.
+第一种方法是直接实现`BasicType`接口。 因为`BasicType`接口有很多实现方法，所以如果值存储在单个数据库列中，那么扩展`AbstractStandardBasicType`或`AbstractSingleColumnStandardBasicType`将会更加方便。
 
 First, we need to extend the `AbstractSingleColumnStandardBasicType` like this:
+首先
 Example 7. Custom `BasicType` implementation
 ```java
 public class BitSetType
