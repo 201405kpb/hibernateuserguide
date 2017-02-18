@@ -21,7 +21,7 @@
     * [2.3.3. @Column注解](Book/domainmodel/3/basiccolumnannotation.md)
     * [2.3.4. BasicTypeRegistry](Book/domainmodel/3/basicregistry.md)
     * [2.3.5. 显示的基础类型](Book/domainmodel/3/basictypeannotation.md)
-    * [2.3.6. 自定义基础类型](Book/domainmodel/3/basiccustomtype.md)
+    
     * [2.3.7. 枚举类型映射](Book/domainmodel/3/basicenums.md)
     * [2.3.8. LOBs类型映射](Book/domainmodel/3/basiclob.md)
     * [2.3.9. Nationalized、Character和Data类型映射](Book/domainmodel/3/basicnationalized.md)
