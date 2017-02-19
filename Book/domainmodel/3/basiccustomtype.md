@@ -74,11 +74,7 @@ implements DiscriminatorType<BitSet> {
   }
 ```
 
-The `AbstractSingleColumnStandardBasicType` requires an `sqlTypeDescriptor` and a `javaTypeDescriptor`.
-
-The `sqlTypeDescriptor` is `VarcharTypeDescriptor.INSTANCE` because the database column is a VARCHAR.
-
-On the Java side, we need to use a `BitSetTypeDescriptor` instance which can be implemented like this:
+The `AbstractSingleColumnStandardBasicType` requires an `sqlTypeDescriptor` and a `javaTypeDescriptor`.The `sqlTypeDescriptor` is `VarcharTypeDescriptor.INSTANCE` because the database column is a VARCHAR. On the Java side, we need to use a `BitSetTypeDescriptor` instance which can be implemented like this:
 
 `AbstractSingleColumnStandardBasicType`需要一个`sqlTypeDescriptor`和`javaTypeDescriptor`。`sqlTypeDescriptor'是`VarcharTypeDescriptor.INSTANCE\`，因为数据库列是一个VARCHAR。在Java方面，我们需要使用一个`BitSetTypeDescriptor`实例，它可以这样实现：
 
@@ -201,6 +197,7 @@ With the new `BitSetType` being registered as `bitset`, the entity mapping looks
 
 **_Example 10. Custom `BasicType` mapping_**
 
+**_例 10. 自定义 `BasicType` 映射 _**
 ```java
 
     @Entity(name = "Product")
@@ -241,7 +238,12 @@ With the new `BitSetType` being registered as `bitset`, the entity mapping looks
 
 To validate this new `BasicType` implementation, we can test it as follows:
 
-Example 11. Persisting the custom `BasicType`
+为了验证这个新的BasicType实现，我们可以按照下面方法测试：
+
+**_Example 11. Persisting the custom `BasicType`_**
+
+**_例 11. 持久化自定义 `BasicType`类型_**
+
 
 ```java
 
@@ -271,111 +273,30 @@ Example 11. Persisting the custom `BasicType`
 
 When executing this unit test, Hibernate generates the following SQL statements:
 
- </div>
+当我们执行上面的单元测试时，Hibernate 将会产生下面的SQL语句：
 
- <div id="basic-custom-type-BitSetType-persistence-example" class="exampleblock">
+```java
+     DEBUG SQL:92 -
+        insert
+        into
+            Product
+            (bitSet, id)
+        values
+        (?, ?)
+    TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [{0, 65, 128, 129}]
+    TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [1]
+    DEBUG SQL:92 -
+        select
+            bitsettype0_.id as id1_0_0_,
+            bitsettype0_.bitSet as bitSet2_0_0_
+        from
+            Product bitsettype0_
+        where
+             bitsettype0_.id=?
+    TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
+    TRACE BasicExtractor:61 - extracted value ([bitSet2_0_0_] : [VARCHAR]) - [{0, 65, 128, 129}]`
+```
 
- <div class="title">Example 11. Persisting the custom `BasicType`</div>
-
- <div class="content">
-
- <div class="listingblock">
-
- <div class="content">
-
- <pre class="prettyprint highlight">`BitSet bitSet = BitSet.valueOf( new long[] {1, 2, 3} );
-
- doInHibernate( this::sessionFactory, session -&gt; {
-
- Product product = new Product( );
-
- product.setId( 1 );
-
- product.setBitSet( bitSet );
-
- session.persist( product );
-
- } );
-
- doInHibernate( this::sessionFactory, session -&gt; {
-
- Product product = session.get( Product.class, 1 );
-
- assertEquals(bitSet, product.getBitSet());
-
- } );`</pre>
-
- </div>
-
- </div>
-
- </div>
-
- </div>
-
- <div class="paragraph">
-
- When executing this unit test, Hibernate generates the following SQL statements:
-
- </div>
-
- <div id="basic-custom-type-BitSetType-persistence-sql-example" class="exampleblock">
-
- <div class="title">Example 12. Persisting the custom `BasicType`</div>
-
- <div class="content">
-
- <div class="listingblock">
-
- <div class="content">
-
- <pre class="prettyprint highlight">`DEBUG SQL:92 -
-
- insert
-
- into
-
- Product
-
- (bitSet, id)
-
- values
-
- (?, ?)
-
- TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [{0, 65, 128, 129}]
-
- TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [1]
-
- DEBUG SQL:92 -
-
- select
-
- bitsettype0_.id as id1_0_0_,
-
- bitsettype0_.bitSet as bitSet2_0_0_
-
- from
-
- Product bitsettype0_
-
- where
-
- bitsettype0_.id=?
-
- TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
-
- TRACE BasicExtractor:61 - extracted value ([bitSet2_0_0_] : [VARCHAR]) - [{0, 65, 128, 129}]`</pre>
-
- </div>
-
- </div>
-
- </div>
-
- </div>
-
- <div class="paragraph">
 
  As you can see, the `BitSetType` takes care of the _Java-to-SQL_ and _SQL-to-Java_ type conversion.
 
