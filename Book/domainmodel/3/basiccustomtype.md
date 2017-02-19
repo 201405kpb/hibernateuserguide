@@ -294,37 +294,29 @@ When executing this unit test, Hibernate generates the following SQL statements:
         where
              bitsettype0_.id=?
     TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
-    TRACE BasicExtractor:61 - extracted value ([bitSet2_0_0_] : [VARCHAR]) - [{0, 65, 128, 129}]`
+    TRACE BasicExtractor:61 - extracted value ([bitSet2_0_0_] : [VARCHAR]) 
+                              - [{0, 65, 128, 129}]`
 ```
 
 
- As you can see, the `BitSetType` takes care of the _Java-to-SQL_ and _SQL-to-Java_ type conversion.
+As you can see, the `BitSetType` takes care of the _Java-to-SQL_ and _SQL-to-Java_ type conversion.
 
- </div>
+如你所见，`BitSetType`负责_Java-to-SQL_和_SQL-to-Java_类型的转换。
 
- </div>
+ ## Implementing a `UserType`
+ ## 实现 `UserType`接口
 
- <div class="sect4">
+The second approach is to implement the `UserType` interface.
 
- ##### Implementing a `UserType`
+第二种方法是实现“UserType”接口。
 
- <div class="paragraph">
+_** Example 13. Custom `UserType` implementation**_
 
- The second approach is to implement the `UserType` interface.
+_**例13 自定义`UserType`的继承类**_
 
- </div>
+```java
 
- <div id="basic-custom-type-BitSetUserType-example" class="exampleblock">
-
- <div class="title">Example 13. Custom `UserType` implementation</div>
-
- <div class="content">
-
- <div class="listingblock">
-
- <div class="content">
-
- <pre class="prettyprint highlight">`public class BitSetUserType implements UserType {
+ public class BitSetUserType implements UserType {
 
  public static final BitSetUserType INSTANCE = new BitSetUserType();
 
@@ -346,11 +338,11 @@ When executing this unit test, Hibernate generates the following SQL statements:
 
  }
 
+
+
  @Override
 
- public boolean equals(Object x, Object y)
-
- throws HibernateException {
+ public boolean equals(Object x, Object y) throws HibernateException {
 
  return Objects.equals( x, y );
 
@@ -358,19 +350,19 @@ When executing this unit test, Hibernate generates the following SQL statements:
 
  @Override
 
- public int hashCode(Object x)
-
- throws HibernateException {
+ public int hashCode(Object x) throws HibernateException {
 
  return Objects.hashCode( x );
 
  }
 
+
+
  @Override
 
- public Object nullSafeGet(
+ public Object nullSafeGet(ResultSet rs, String[] names,
 
- ResultSet rs, String[] names, SharedSessionContractImplementor session, Object owner)
+ SharedSessionContractImplementor session, Object owner)
 
  throws HibernateException, SQLException {
 
@@ -388,9 +380,9 @@ When executing this unit test, Hibernate generates the following SQL statements:
 
  @Override
 
- public void nullSafeSet(
+ public void nullSafeSet(PreparedStatement st, Object value, int index,
 
- PreparedStatement st, Object value, int index, SharedSessionContractImplementor session)
+ SharedSessionContractImplementor session)
 
  throws HibernateException, SQLException {
 
@@ -416,9 +408,7 @@ When executing this unit test, Hibernate generates the following SQL statements:
 
  @Override
 
- public Object deepCopy(Object value)
-
- throws HibernateException {
+ public Object deepCopy(Object value) throws HibernateException {
 
  return value == null ? null :
 
@@ -464,39 +454,28 @@ When executing this unit test, Hibernate generates the following SQL statements:
 
  }
 
- }`</pre>
+ }
 
- </div>
+```
+The entity mapping looks as follows:
 
- </div>
+实体映射如下：
 
- </div>
+**_Example 14. Custom `UserType` mapping_**
 
- </div>
+**_例 14.自定义`UserType`类型的映射_**
 
- <div class="paragraph">
+```java
 
- The entity mapping looks as follows:
-
- </div>
-
- <div id="basic-custom-type-BitSetUserType-mapping-example" class="exampleblock">
-
- <div class="title">Example 14. Custom `UserType` mapping</div>
-
- <div class="content">
-
- <div class="listingblock">
-
- <div class="content">
-
- <pre class="prettyprint highlight">`@Entity(name = "Product")
+ @Entity(name = "Product")
 
  public static class Product {
 
  @Id
 
  private Integer id;
+
+
 
  @Type( type = "bitset" )
 
@@ -526,178 +505,92 @@ When executing this unit test, Hibernate generates the following SQL statements:
 
  }
 
- }`</pre>
+ }
 
- </div>
+ ```
 
- </div>
+In this example, the `UserType` is registered under the `bitset` name, and this is done like this:
 
- </div>
+在这个例子中，`UserType`被注册为`bitset`名称，像下面一样：
 
- </div>
+**_Example 15. Register a Custom `UserType` implementation_**
 
- <div class="paragraph">
+**_例 15. 注册自定义实现 `UserType`接口的类_**
 
- In this example, the `UserType` is registered under the `bitset` name, and this is done like this:
+```java
 
- </div>
+     configuration.registerTypeContributor( (typeContributions, serviceRegistry) {
 
- <div id="basic-custom-type-register-UserType-example" class="exampleblock">
+         typeContributions.contributeType( BitSetUserType.INSTANCE, "bitset");
 
- <div class="title">Example 15. Register a Custom `UserType` implementation</div>
+     } );
 
- <div class="content">
-
- <div class="listingblock">
-
- <div class="content">
-
- <pre class="prettyprint highlight">`configuration.registerTypeContributor( (typeContributions, serviceRegistry) -&gt; {
-
- typeContributions.contributeType( BitSetUserType.INSTANCE, "bitset");
-
- } );`</pre>
-
- </div>
-
- </div>
-
- <div class="paragraph">
+ ```
 
  or using the `MetadataBuilder`
 
- </div>
+ 或者使用 `MetadataBuilder`对象进行注册
 
- <div class="listingblock">
+```java
 
- <div class="content">
+     ServiceRegistry standardRegistry = new StandardServiceRegistryBuilder().build();
 
- <pre class="prettyprint highlight">`ServiceRegistry standardRegistry =
+     MetadataSources sources = new MetadataSources( standardRegistry );
 
- new StandardServiceRegistryBuilder().build();
+     MetadataBuilder metadataBuilder = sources.getMetadataBuilder();
 
- MetadataSources sources = new MetadataSources( standardRegistry );
+     metadataBuilder.applyBasicType( BitSetUserType.INSTANCE, "bitset" );`</pre>
 
- MetadataBuilder metadataBuilder = sources.getMetadataBuilder();
+```
 
- metadataBuilder.applyBasicType( BitSetUserType.INSTANCE, "bitset" );`</pre>
+>![CustomBaseTypeNote](/Book/images/org/hibernate/docbook/note.png)
 
- </div>
+>Like `BasicType`, you can also register the `UserType` using a simple name.
 
- </div>
+>像`BasicType`类型一样，你也可以使用一个简单的名字注册`UserType`。
 
- </div>
+>Without registration, the `UserType` mapping requires the fully-classified name:
 
- </div>
+>没有注册，`UserType`映射需要完全分类的名称：
 
- <div class="admonitionblock note">
+>`@Type( type = "org.hibernate.userguide.mapping.basic.BitSetUserType" )`
 
- <table>
+When running the previous test case against the `BitSetUserType` entity mapping, Hibernate executed the following SQL statements:
 
- <tr>
+当针对`BitSetUserType`实体映射运行上面的测试用例时，Hibernate执行了以下SQL语句：
 
- <td class="icon">
+**_ Example 16. Persisting the custom `BasicType`_**
 
- </td>
+**_ 例 16.持久化自定义 `BasicType`的类_**
 
- <td class="content">
+```java
 
- <div class="paragraph">
+     `DEBUG SQL:92 -
 
- Like `BasicType`, you can also register the `UserType` using a simple name.
+     insert
+     into
+         Product
+         (bitSet, id)
+     values
+         (?, ?)
+     DEBUG BitSetUserType:71 - Binding 1,10,11 to parameter 1
+     TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [1]
 
- </div>
+     DEBUG SQL:92 -
+         select
+             bitsetuser0_.id as id1_0_0_,
+             bitsetuser0_.bitSet as bitSet2_0_0_
+         from
+             Product bitsetuser0_
+         where
+             bitsetuser0_.id=?
 
- <div class="paragraph">
+     TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
+     DEBUG BitSetUserType:56 - Result set column bitSet2_0_0_ value is 1,10,11`</pre>
 
- Without registration, the `UserType` mapping requires the fully-classified name:
+```
 
- </div>
 
- <div class="listingblock">
 
- <div class="content">
 
- <pre class="prettyprint highlight">`@Type( type = "org.hibernate.userguide.mapping.basic.BitSetUserType" )`</pre>
-
- </div>
-
- </div>
-
- </td>
-
- </tr>
-
- </table>
-
- </div>
-
- <div class="paragraph">
-
- When running the previous test case against the `BitSetUserType` entity mapping, Hibernate executed the following SQL statements:
-
- </div>
-
- <div id="basic-custom-type-BitSetUserType-persistence-sql-example" class="exampleblock">
-
- <div class="title">Example 16. Persisting the custom `BasicType`</div>
-
- <div class="content">
-
- <div class="listingblock">
-
- <div class="content">
-
- <pre class="prettyprint highlight">`DEBUG SQL:92 -
-
- insert
-
- into
-
- Product
-
- (bitSet, id)
-
- values
-
- (?, ?)
-
- DEBUG BitSetUserType:71 - Binding 1,10,11 to parameter 1
-
- TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [1]
-
- DEBUG SQL:92 -
-
- select
-
- bitsetuser0_.id as id1_0_0_,
-
- bitsetuser0_.bitSet as bitSet2_0_0_
-
- from
-
- Product bitsetuser0_
-
- where
-
- bitsetuser0_.id=?
-
- TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
-
- DEBUG BitSetUserType:56 - Result set column bitSet2_0_0_ value is 1,10,11`</pre>
-
- </div>
-
- </div>
-
- </div>
-
- </div>
-
- </div>
-
- </div>
-
- <div class="sect3">
-
-
+ 
