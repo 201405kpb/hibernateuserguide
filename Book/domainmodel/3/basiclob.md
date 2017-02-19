@@ -1,4 +1,4 @@
- #### 2.3.8. Mapping LOBs
+ #### 2.3.8. LOBs 类型映射
 
     <div class="paragraph">
 
