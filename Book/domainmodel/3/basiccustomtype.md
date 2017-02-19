@@ -288,3 +288,6 @@ Example 11. Persisting the custom `BasicType`
 When executing this unit test, Hibernate generates the following SQL statements:
 
 
+
+
+
