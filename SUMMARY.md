@@ -137,7 +137,7 @@
     * [5.11. 检查持久化状态](Book/pc/pc_contains.md)
     * [5.12. 清除实体对象](Book/pc/evicting_entities.md)
 * [6. 刷新](Book/flushing/README.md)
-    * [6.1. AUTO flush](Book/flushing/flushing-auto.md)
+    * [6.1. 自动刷新](Book/flushing/flushing-auto.md)
         * [6.1.1. AUTO flush on commit](Book/flushing/code_auto_code_flush_on_commit.md)
         * [6.1.2. AUTO flush on JPQL\/HQL query](Book/flushing/code_auto_code_flush_on_jpql_hql_query.md)
         * [6.1.3. AUTO flush on native SQL query](Book/flushing/code_auto_code_flush_on_native_sql_query.md)
